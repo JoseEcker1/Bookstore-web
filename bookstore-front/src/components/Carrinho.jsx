@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { confirmOrder } from '../services/OrderService.js'
 import Button from 'react-bootstrap/Button';
@@ -7,6 +8,8 @@ export default function Carrinho( {cart, setCart, userId} ){
 
     const navigate = useNavigate()
 
+    const [loadingPurchase, setloadingPurchase] = useState(false)
+
     function removeFromCart(p){
         let newCart = cart.filter(i => i.product.id !== p.id)
         localStorage.setItem(`carrinho${userId}`, JSON.stringify(newCart))
@@ -15,9 +18,11 @@ export default function Carrinho( {cart, setCart, userId} ){
     
     function handlePurchase(e){
         e.preventDefault()
+        setloadingPurchase("Aguarde...")
 
         confirmOrder(userId, cart).then(resp => {
             localStorage.removeItem(`carrinho${userId}`)
+            setloadingPurchase(false)
             setCart([])
             navigate("/pedidos")
         })
@@ -115,7 +120,7 @@ export default function Carrinho( {cart, setCart, userId} ){
                         <span>{(cart.reduce( (accum, curr) => accum + Number(curr.totalValue), 0)).toFixed(2)} R$</span>
                     </div>
                     <div className="carrinho-container-btn">
-                        <Button variant="success btn-lg" disabled={cart[0] === undefined} onClick={e => handlePurchase(e)}>Finalizar compra</Button>
+                        <Button variant="success btn-lg" disabled={cart[0] === undefined || loadingPurchase} onClick={e => handlePurchase(e)}>{loadingPurchase || "Finalizar compra"}</Button>
                     </div>
                 </div>
             </div>
