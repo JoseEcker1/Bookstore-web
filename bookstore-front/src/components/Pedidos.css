@@ -1,0 +1,188 @@
+.pedidos{
+    width: 80%;
+}
+
+.meus-pedidos{
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.meus-pedidos i{
+    color: black;
+    margin-right: 10px;
+}
+
+.container-pedido{
+    box-shadow: 0 3px 12px rgba(0,0,0,.15);
+    margin-bottom: 40px;
+    border: 1px solid rgb(204, 204, 204);
+    padding: 0 0.75rem;
+}
+
+.pedido-info{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 120px;
+}
+
+.info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.p-detalhes{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgb(63, 63, 63);
+    font-weight: bold;
+}
+
+.p-detalhes:hover{
+    cursor: pointer;
+}
+
+.p-detalhes i{
+    color: rgb(63, 63, 63);
+}
+
+.container-collapse{
+    margin-top: 20px;
+}
+
+.pedidos-table{
+    width: 85%;
+    margin: auto;
+}
+
+.pedidos-table th{
+    border-bottom: 1px solid black;
+    padding-bottom: 15px;
+}
+
+.pedidos-table td{
+    border-bottom: 1px solid grey;
+}
+
+.th-total{
+    text-align: end;
+    padding-right: 10px;
+}
+
+.pedidos-container-td{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    margin-top: 25px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.pedidos-img{
+    height: 120px;
+}
+
+.ped-detalhes-produto{
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    padding-left: 15px;
+    flex-direction: column;
+}
+
+.ped-dp-titulo{
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.ped-dp-qnt{
+    font-size: 15px;
+    color: #1a1a1a;
+}
+
+.ped-valor-item{
+    font-size: 20px;
+}
+
+.ped-total-container{
+    width: 85%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.ped-t-row{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 5px 5px 15px;
+}
+
+.ped-t-row2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 5px 5px 15px;
+    height: 40px;
+    background-color: rgb(225, 232, 238);
+    font-weight: 600;
+}
+
+.ped-t-row2 span:nth-child(2){
+    font-size: 17px;
+}
+
+@media (width <= 992px){
+
+    .pedidos{
+        width: 90%;
+    }
+
+    .pedido-info{
+        height: 170px;
+        display: grid;
+        grid-template: 1fr 1fr / 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .info-container{
+        text-align: center;
+    }
+
+    .pedidos-table{
+        width: 100%;
+    }
+
+    .pedidos-container-td{
+        padding: 0;
+        margin-bottom: 10px;
+    }
+    
+    .pedidos-img{
+        height: 80px;
+    }
+
+    .ped-dp-titulo{
+        font-size: 16px;
+    }
+
+    .ped-dp-qnt{
+        font-size: 14px;
+    }
+
+    .ped-valor-item{
+        font-size: 17px;
+    }
+
+    .ped-total-container{
+        width: 100%;
+    }
+
+    .ped-t-row, .ped-t-row2{
+        margin: 10px 0 5px 0;
+        padding-left: 3px;
+    }
+}

@@ -1,0 +1,97 @@
+.header{
+    height: 70px;
+    display: flex;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.267);
+}
+
+.header-logo{
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.header-logo img{
+    margin-left: 40px;
+    width: 180px;
+}
+
+.header-logo img:hover{
+    cursor: pointer;
+}
+
+.header-links{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 60px;
+}
+
+.h-link{
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.h-link-2{
+    width: 70px;
+    margin-right: 70px;
+}
+
+.hl2-dropitem{
+    font-size: 15px;
+}
+
+.h-link-2 i{
+    color: black;
+    font-size: 1.5em;
+    width: fit-content;
+}
+
+.h-link:hover{
+    cursor: pointer;
+    color: rgb(37, 138, 138);
+}
+
+.header-links-m{
+    display: none;
+}
+
+
+@media (width <= 992px){
+
+    .header-logo img{
+        margin-left: 10px;
+        width: 175px;
+    }
+    
+    .dropdown-toggle::after {
+        display: none !important; 
+    }
+    
+    .header-links{
+        display: none;
+    }
+
+    .header-links-m{
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    #dropdown-basic-button{
+        background-color: #626264;
+        border: none;
+        border-radius: 15%;
+    }
+
+    #dropdown-basic-button i{
+        color: white;
+    }
+
+    .h-link-2{
+        width: fit-content;
+        margin-right: 15px;
+    }
+}
